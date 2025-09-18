@@ -51,7 +51,7 @@ const LoginPage = ({ handleLogin, goToSignup }) => {
       {/* Right Section */}
       <div className="relative z-10 w-1/2 flex items-center justify-center bg-white">
         <div className="w-[350px]">
-          <h2 className="text-2xl font-bold mb-6 text-teal-600">Login</h2>
+          <h2 className="text-3xl font-bold mb-6 text-teal-600">Login</h2>
           <form onSubmit={handleLogin} className="flex flex-col gap-4">
             <div className="flex items-center rounded-lg px-3 py-2 bg-teal-600">
               <span className="mr-2 text-gray-400">👤</span>
