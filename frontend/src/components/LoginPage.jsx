@@ -37,7 +37,7 @@ const LoginPage = ({ handleLogin, goToSignup }) => {
       </div>
 
       {/* Left Section */}
-      <div className="relative z-10 w-1/1 flex flex-col justify-center items-center text-white p-10">
+      <div className="relative z-10 w-1/1 flex flex-col justify-center items-center text-white p-10" >
         <h1 className="text-xl font-sans mb-2 text-center">
           NORTHLINK TECHNOLOGICAL COLLEGE
         </h1>
