@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import logo from "../assets/logo2.png";
 import accountbg from "../assets/accountbg.png";
 import bgmark from "../assets/bgmark.png";
 
 const LoginPage = ({ handleLogin, goToSignup }) => {
   const [showInfo, setShowInfo] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const popupRef = useRef(null);
 
   // Close popup if clicked outside
@@ -63,14 +65,22 @@ const LoginPage = ({ handleLogin, goToSignup }) => {
               />
             </div>
 
-            <div className="flex items-center bg-teal-600 rounded-lg px-3 py-2">
+            {/* Password Field with Show/Hide */}
+            <div className="flex items-center bg-teal-600 rounded-lg px-3 py-2 relative">
               <span className="mr-2 text-gray-400">🔑</span>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="flex-1 outline-none text-white"
+                className="flex-1 outline-none text-white pr-8"
                 required
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 text-gray-300 hover:text-white"
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </button>
             </div>
 
             {/* Buttons section */}

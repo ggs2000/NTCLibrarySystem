@@ -1,7 +1,11 @@
+import { useState } from "react";
 import logo from "../assets/logo2.png";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import accountbg from "../assets/accountbg.png";
 
 const SignupPage = ({ handleSignup, goToLogin }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="relative flex h-screen w-screen overflow-hidden">
       {/* Background Image */}
@@ -38,7 +42,7 @@ const SignupPage = ({ handleSignup, goToLogin }) => {
             <input
               type="text"
               placeholder="First Name/ Middle Name/ Last Name/ Suffix"
-              className="rounded-lg px-3 py-2 outline-none w-full bg-teal-500"
+              className="rounded-lg px-3 py-2 outline-none w-full bg-teal-500 text-white"
               required
             />
 
@@ -46,17 +50,26 @@ const SignupPage = ({ handleSignup, goToLogin }) => {
             <input
               type="email"
               placeholder="Email Address"
-              className="rounded-lg px-3 py-2 outline-none w-full bg-teal-500"
+              className="rounded-lg px-3 py-2 outline-none w-full bg-teal-500 text-white"
               required
             />
 
-            {/* Password */}
-            <input
-              type="password"
-              placeholder="Password"
-              className="rounded-lg px-3 py-2 outline-none w-full bg-teal-500"
-              required
-            />
+            {/* Password with show/hide */}
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                className="rounded-lg px-3 py-2 outline-none w-full bg-teal-500 text-white pr-10"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-200 hover:text-white"
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </button>
+            </div>
 
             {/* Role Selection */}
             <fieldset className="border-4 border-teal-500 rounded-lg px-3 py-2">
@@ -67,7 +80,7 @@ const SignupPage = ({ handleSignup, goToLogin }) => {
                   <span className="text-teal-700">Librarian</span>
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="radio" name="role" value="student"/>
+                  <input type="radio" name="role" value="student" />
                   <span className="text-teal-700">Student Assistant (Staff)</span>
                 </label>
               </div>
@@ -81,7 +94,7 @@ const SignupPage = ({ handleSignup, goToLogin }) => {
               Create
             </button>
 
-             {/* ✅ Back to login */}
+            {/* Back to login */}
             <p className="text-sm text-gray-500 text-right mt-2">
               Already have an account?{" "}
               <button
