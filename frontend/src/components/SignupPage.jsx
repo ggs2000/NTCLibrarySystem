@@ -59,15 +59,15 @@ const SignupPage = ({ handleSignup, goToLogin }) => {
             />
 
             {/* Role Selection */}
-            <fieldset className="border-2 border-teal-500 rounded-lg px-3 py-2">
-              <legend className="text-sm text-gray-600">Role</legend>
+            <fieldset className="border-4 border-teal-500 rounded-lg px-3 py-2">
+              <legend className="text-md text-teal-600">Role</legend>
               <div className="flex flex-col gap-2 mt-2">
                 <label className="flex items-center gap-2">
                   <input type="radio" name="role" value="librarian" required />
                   <span className="text-teal-700">Librarian</span>
                 </label>
                 <label className="flex items-center gap-2">
-                  <input type="radio" name="role" value="student" />
+                  <input type="radio" name="role" value="student"/>
                   <span className="text-teal-700">Student Assistant (Staff)</span>
                 </label>
               </div>

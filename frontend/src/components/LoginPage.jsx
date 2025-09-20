@@ -112,10 +112,13 @@ const LoginPage = ({ handleLogin, goToSignup }) => {
                     <img
                       src={bgmark}
                       alt="Info"
-                      className="w-full h-auto rounded-lg shadow-lg"
+                      className="w-full h-auto rounded-full"
+                      style={{
+                      boxShadow: "8px 8px 20px rgba(0,0,0,0.4)", // 3D shadow on right & bottom
+                      }}
                     />
                     {/* Text overlay */}
-                    <p className="absolute inset-0 flex items-center justify-center text-sm text-gray-800 px-4 text-center">
+                    <p className="absolute inset-0 flex items-center justify-center text-md text-gray-800 px-4 text-center">
                       Only librarians and staff can create accounts in the
                       system.
                     </p>
